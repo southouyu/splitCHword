@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--自定义算法定义规则-->
+<AlgorithmDefined> 
+  <!--名称-->  
+  <Name>SplitCHword</Name>
+  <!--版本-->  
+  <Version>V1.0</Version>
+  <!--描述-->  
+  <Description>中文分词器</Description >
+  <!--调用类路径-->  
+  <ClassPath>com.datamodel.SplitCHword</ClassPath>
+  <!--输入列信息-->  
+  <InputInfos> 
+    <!--可以同时处理N个数据集数据-->  
+    <DataSetNum>1</DataSetNum>
+    <!--每个数据集要求的数据信息-->  
+    <DataSetInputInfo> 
+      <!--每个数据集包含输入列-->  
+      <InputColNum>1</InputColNum>
+      <InputInfo> 
+        <!--数据集的输入列名-->  
+        <InputColName>feature</InputColName>
+        <!--数据集输入列类型-->  
+        <InputColType>string</InputColType>
+        <!--数据集输入列描述-->  
+        <InputColDesc>进行分词的列</InputColDesc>
+      </InputInfo>
+    </DataSetInputInfo>
+  </InputInfos>  
+  <!--算子输出列信息，只能输出一个数据集-->  
+  <OutputInfos> 
+    <!--算子输出数据集包含多少列-->  
+    <OutputColNum>1</OutputColNum>
+    <!--输出数据集列信息-->  
+    <OutputInfo> 
+      <!--输出数据集列名称-->  
+      <OutputColName>splitfeature</OutputColName>
+      <!--输出数据集列类型-->  
+      <OutputColType>string</OutputColType>
+      <!--输出数据集列描述-->  
+      <OutputColDesc>分隔后输出列</OutputColDesc>
+    </OutputInfo>
+  </OutputInfos>  
+  <!--算子运算需配置参数-->  
+  <Parameters>
+    <!--所需参数个数-->  
+    <ParameterNum>2</ParameterNum>
+    <!--每一个参数信息-->
+    <!--参数类型
+     1	int
+     2	long
+     3	double
+     4	string
+     5	boolean
+     6	单列选择
+     7	多列选择
+     8	数据集名称
+     9	array<int>
+     10	array<double>
+     11	enum
+     12	DPL
+     13	array<string>-->
+    <Parameter>
+     <ParameterType>4</ParameterType>
+      <ParameterName>inputCol</ParameterName>
+      <!--参数展示名称-->
+      <ParameterDisplayName>输入列</ParameterDisplayName>
+      <!--参数描述-->
+      <ParameterDesc>输入列信息</ParameterDesc>
+      <!--参数所需默认值-->  
+      <ParameterValue>feature</ParameterValue>
+      <!--枚举类型时值定义-->
+      <ParameterValueList></ParameterValueList>
+    </Parameter>
+    <Parameter>
+      <ParameterType>4</ParameterType>
+      <ParameterName>outputCol</ParameterName>
+      <!--参数展示名称-->
+      <ParameterDisplayName>输出列</ParameterDisplayName>
+      <!--参数描述-->
+      <ParameterDesc>分隔完成后输出的列信息</ParameterDesc>
+      <!--参数所需默认值-->
+      <ParameterValue>splitfeature</ParameterValue>
+      <!--枚举类型时值定义-->
+      <ParameterValueList></ParameterValueList>
+    </Parameter>
+  </Parameters> 
+</AlgorithmDefined>
